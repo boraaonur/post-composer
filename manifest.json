@@ -1,0 +1,18 @@
+{
+  "name": "Post Composer for X",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "notifications"],
+  "host_permissions": ["*://*.twitter.com/*", "*://*.x.com/*"],
+  "action": {
+    "default_title": "Post Composer for X",
+    "default_popup": "./popup/dist/index.html"
+  },
+  "content_scripts": [
+    {
+      "css": ["./content/dist/tailwind.css"],
+      "matches": ["*://*.twitter.com/*", "*://*.x.com/*"],
+      "js": ["./content/dist/content.js"]
+    }
+  ]
+}
